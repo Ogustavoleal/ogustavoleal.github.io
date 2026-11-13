@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Curso gravado do Gustavo Leal: transforme seu Instagram em uma fonte de clientes todo mês.">
+<meta name="theme-color" content="#09090F">
+<meta property="og:title" content="Curso Gustavo Leal">
+<meta property="og:description" content="O método que levou o perfil a 636 mil seguidores, em aulas gravadas.">
+<meta property="og:type" content="website">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Curso Gustavo Leal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Layout: página de vendas em coluna (máx. 640px). Topo com promessa e botão, história com números, dores, módulos, bônus, depoimentos, garantia, perguntas. Barra de compra fixa embaixo depois do topo. */
+  :root {
+    --bg: #09090F;
+    --card: #12121B;
+    --card-2: #181824;
+    --line: #262636;
+    --ink: #F4F3FA;
+    --muted: #A09FB6;
+    --accent: #9D9BFF;
+    --accent-fill: #5F5CF0;
+    --on-accent: #FFFFFF;
+    --glow: rgba(95, 92, 240, 0.42);
+    --star: #FFC94D;
+    --f-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --f-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--bg); scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; }
+  h1, h2, h3, p { margin: 0; }
+  [hidden] { display: none !important; }
+  em { font-style: italic; color: var(--accent); }
+
+  .topbar {
+    display: block;
+    padding: 9px max(16px, env(safe-area-inset-right, 0px)) 9px max(16px, env(safe-area-inset-left, 0px));
+    background: var(--accent-fill);
+    color: var(--on-accent);
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .glow {
+    position: absolute;
+    left: 0; right: 0;
+    height: 620px;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 55% at 50% 0%, var(--glow), transparent 70%),
+      radial-gradient(40% 40% at 88% 18%, rgba(157, 155, 255, 0.14), transparent 70%);
+  }
+
+  .wrap {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+
+  section { padding-block: 56px 0; }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(38px, 10vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(32px, 8.4vw, 44px);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  .head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .head p, .body-copy p { color: var(--muted); max-width: 60ch; }
+  .head p strong, .body-copy p strong { color: var(--ink); }
+
+  /* ---------- Topo ---------- */
+  .hero { padding-block: 36px 0; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .hero .lead { color: var(--muted); font-size: 17px; max-width: 40ch; text-wrap: balance; }
+  .hero .lead strong { color: var(--ink); }
+  .rating { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); }
+  .rating .stars { display: inline-flex; gap: 2px; color: var(--star); }
+  .rating svg { width: 15px; height: 15px; fill: currentColor; }
+  .rating b { color: var(--ink); }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 420px;
+    min-height: 58px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: var(--accent-fill);
+    color: var(--on-accent);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 14px 44px -14px var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta svg { width: 18px; height: 18px; flex: none; }
+  .cta:hover { box-shadow: 0 18px 54px -12px var(--glow), inset 0 1px 0 rgba(255, 255, 255, 0.22); }
+  .cta:active { transform: scale(0.985); }
+  .cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cta-note { font-size: 13px; color: var(--muted); display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; }
+  .cta-note span { display: inline-flex; align-items: center; gap: 6px; }
+  .cta-note svg { width: 15px; height: 15px; color: var(--accent); }
+  .cta-block { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 28px; }
+
+  /* ---------- História ---------- */
+  .body-copy { display: flex; flex-direction: column; gap: 14px; }
+  .stats {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-block: 1px solid var(--line);
+  }
+  .stat { padding: 18px 6px; text-align: center; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .stat + .stat { border-left: 1px solid var(--line); }
+  .stat b { font-family: var(--f-display); font-weight: 400; font-size: clamp(26px, 7.6vw, 38px); line-height: 1.05; }
+  .stat span { font-size: 12px; color: var(--muted); line-height: 1.3; }
+
+  /* ---------- Dores ---------- */
+  .pains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .pain {
+    padding: 18px 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .pain h3 { font-size: 15px; font-weight: 800; color: var(--accent); }
+  .pain p { font-size: 14.5px; color: var(--ink); line-height: 1.45; }
+  .pains-foot { margin-top: 18px; font-weight: 700; }
+
+  /* ---------- Módulos ---------- */
+  .modules { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .modules li {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 4px 14px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+  .modules li:last-child { border-bottom: 1px solid var(--line); }
+  .modules .n { grid-row: span 3; font-family: var(--f-display); font-size: 30px; line-height: 1; color: var(--accent); }
+  .modules h3 { font-size: 17px; font-weight: 800; line-height: 1.3; }
+  .modules p { font-size: 14.5px; color: var(--muted); }
+  .modules .count { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); opacity: 0.75; }
+
+  .bonus {
+    margin-top: 22px;
+    padding: 22px 20px;
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .bonus ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .bonus li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 10px; font-weight: 600; font-size: 15px; }
+  .bonus svg { width: 22px; height: 22px; color: var(--accent); }
+
+  /* ---------- Depoimentos (espaços para depoimentos reais) ---------- */
+  .testis { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+  .testi {
+    padding: 20px 18px;
+    border-radius: 16px;
+    border: 1.5px dashed var(--line);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+  }
+  .testi .q { font-family: var(--f-display); font-size: 44px; line-height: 0.6; color: var(--accent); height: 22px; }
+  .testi p { color: var(--muted); font-size: 14.5px; }
+  .testi .who { display: flex; align-items: center; gap: 10px; }
+  .testi .avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--card-2); border: 1px dashed var(--line); flex: none; }
+  .testi .who span { font-size: 13px; color: var(--muted); line-height: 1.3; }
+  .testi .who b { color: var(--ink); display: block; font-size: 14px; }
+
+  /* ---------- Garantia ---------- */
+  .guarantee {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    text-align: left;
+    width: 100%;
+  }
+  .seal {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: grid; place-items: center;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--f-display);
+    font-size: 24px;
+    line-height: 1;
+  }
+  .guarantee h3 { font-size: 16px; font-weight: 800; }
+  .guarantee p { font-size: 14.5px; color: var(--muted); }
+
+  .final { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .final > p { color: var(--muted); max-width: 40ch; }
+
+  /* ---------- Perguntas ---------- */
+  .faq { display: flex; flex-direction: column; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .faq summary svg { width: 20px; height: 20px; flex: none; color: var(--accent); transition: transform 0.2s ease; }
+  .faq details[open] summary svg { transform: rotate(45deg); }
+  .faq details p { padding: 0 0 18px; color: var(--muted); font-size: 15px; max-width: 60ch; }
+  .faq details p a { color: var(--accent); font-weight: 700; }
+
+  .foot {
+    margin-top: 56px;
+    padding-block: 18px 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .foot a { color: var(--ink); font-weight: 600; text-decoration: none; }
+
+  /* ---------- Barra fixa ---------- */
+  .stickybar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 20;
+    padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    background: rgba(9, 9, 15, 0.92);
+    border-top: 1px solid var(--line);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    transform: translateY(110%);
+    transition: transform 0.25s ease;
+  }
+  .stickybar.on { transform: translateY(0); }
+  .stickybar .cta { min-height: 50px; font-size: 14px; }
+  body.has-bar { padding-bottom: 80px; }
+
+  @media (max-width: 440px) {
+    .pains { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cta, .stickybar, .faq summary svg { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="topbar" href="#entrar">Curso gravado · Acesso imediato</a>
+<div class="glow" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <!-- ===== TOPO ===== -->
+  <header class="hero">
+    <span class="eyebrow">Para empresários que querem vender pelo Instagram</span>
+    <h1>Transforme seu Instagram em uma fonte de <em>clientes todo mês</em></h1>
+    <p class="lead">O método gravado, passo a passo, que eu uso no meu perfil de <strong>636 mil seguidores</strong> e nas empresas que a minha equipe atende.</p>
+
+    <!-- EXEMPLO: troque pela sua nota e número de alunos reais -->
+    <span class="rating">
+      <span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></svg>
+      </span>
+      <span><b>4,9/5</b> de mais de 9 mil alunos</span>
+    </span>
+
+    <div class="cta-block" id="hero-cta" style="margin-top: 8px">
+      <!-- LINK DE COMPRA: troque pelo link do checkout quando tiver -->
+      <a class="cta" href="https://wa.me/554796296233?text=Oi%20Gustavo!%20Vim%20pela%20p%C3%A1gina%20do%20curso%20e%20quero%20entrar.">
+        Quero entrar no curso
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <span class="cta-note">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Acesso imediato</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>7 dias de garantia</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- ===== HISTÓRIA ===== -->
+  <section aria-labelledby="t-story">
+    <div class="head">
+      <span class="eyebrow">Do zero a 636 mil seguidores</span>
+      <h2 id="t-story">Eu comecei com um <em>celular na mão</em></h2>
+    </div>
+    <div class="body-copy">
+      <p>Sem equipe e sem verba pra anúncio. Fui testando formato, roteiro e gancho até entender o que faz uma pessoa parar de rolar o feed e virar cliente.</p>
+      <p>Hoje são <strong>636 mil seguidores</strong>, mais de <strong>2,2 mil posts</strong> e uma equipe que produz conteúdo pra empresas do Brasil inteiro. O curso é esse método, organizado em aulas que você assiste no seu ritmo.</p>
+    </div>
+    <!-- Só "636 mil" é real. Os outros são EXEMPLOS. -->
+    <div class="stats">
+      <div class="stat"><b>636 mil</b><span>seguidores</span></div>
+      <div class="stat"><b>+1,2 bi</b><span>views geradas</span></div>
+      <div class="stat"><b>+340</b><span>empresas atendidas</span></div>
+    </div>
+  </section>
+
+  <!-- ===== DORES ===== -->
+  <section aria-labelledby="t-pains">
+    <div class="head">
+      <span class="eyebrow">Por que seu conteúdo não vende</span>
+      <h2 id="t-pains">Você posta, mas o cliente <em>não chega</em></h2>
+      <p>Quase sempre o problema está em um destes quatro pontos:</p>
+    </div>
+    <div class="pains">
+      <div class="pain"><h3>Posicionamento</h3><p>Seu conteúdo atrai curioso em vez de comprador.</p></div>
+      <div class="pain"><h3>Roteiro</h3><p>As pessoas saem do vídeo antes de entender o que você vende.</p></div>
+      <div class="pain"><h3>Produção</h3><p>Gravar e editar toma tempo demais e o resultado não parece profissional.</p></div>
+      <div class="pain"><h3>Conversão</h3><p>Os views até vêm, mas ninguém chama no direct pra comprar.</p></div>
+    </div>
+    <p class="pains-foot">O curso resolve os quatro, nessa ordem.</p>
+  </section>
+
+  <!-- ===== MÓDULOS ===== -->
+  <section aria-labelledby="t-mod">
+    <div class="head">
+      <span class="eyebrow">O que você vai aprender</span>
+      <h2 id="t-mod">4 módulos, do posicionamento à <em>venda</em></h2>
+    </div>
+    <!-- Quantidade de aulas: EXEMPLO -->
+    <ol class="modules">
+      <li><span class="n">01</span><h3>Posicionamento que atrai cliente</h3><p>Defina pra quem você fala, o que postar e como se diferenciar no seu nicho.</p><span class="count">18 aulas</span></li>
+      <li><span class="n">02</span><h3>Roteiros que prendem</h3><p>Ganchos, estrutura de vídeos de 30 a 60 segundos e chamadas que fazem a pessoa agir.</p><span class="count">34 aulas</span></li>
+      <li><span class="n">03</span><h3>Gravação e edição no celular</h3><p>Luz, áudio, enquadramento e edição rápida no CapCut, só com o celular.</p><span class="count">41 aulas</span></li>
+      <li><span class="n">04</span><h3>Crescimento e vendas</h3><p>Frequência, formatos, stories que vendem e como levar a pessoa do vídeo pro WhatsApp.</p><span class="count">29 aulas</span></li>
+    </ol>
+
+    <!-- BÔNUS: EXEMPLOS, confirme o que você vai entregar -->
+    <div class="bonus">
+      <span class="eyebrow">Bônus</span>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zM12 8c2-4 6-4 6-1.5S15 8 12 8z"/></svg>100 roteiros prontos pra adaptar ao seu negócio</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zM12 8c2-4 6-4 6-1.5S15 8 12 8z"/></svg>Calendário de conteúdo de 30 dias</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1.5S9 8 12 8zM12 8c2-4 6-4 6-1.5S15 8 12 8z"/></svg>Grupo de alunos pra tirar dúvidas</li>
+      </ul>
+    </div>
+
+    <div class="cta-block">
+      <a class="cta" href="https://wa.me/554796296233?text=Oi%20Gustavo!%20Vim%20pela%20p%C3%A1gina%20do%20curso%20e%20quero%20entrar.">
+        Quero entrar no curso
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS =====
+       Espaços para depoimentos REAIS. Troque cada bloco pelo texto, nome e @ de um aluno de verdade
+       (com autorização dele). Prints de comentários e DMs também funcionam. -->
+  <section aria-labelledby="t-testi">
+    <div class="head">
+      <span class="eyebrow">Depoimentos</span>
+      <h2 id="t-testi">O que dizem os <em>alunos</em></h2>
+    </div>
+    <div class="testis">
+      <figure class="testi" style="margin:0">
+        <span class="q" aria-hidden="true">“</span>
+        <p>Depoimento real de aluno aqui. Melhor ainda se tiver um resultado concreto, como seguidores, vendas ou clientes novos.</p>
+        <figcaption class="who"><span class="avatar" aria-hidden="true"></span><span><b>Nome do aluno</b>@perfil · profissão</span></figcaption>
+      </figure>
+      <figure class="testi" style="margin:0">
+        <span class="q" aria-hidden="true">“</span>
+        <p>Depoimento real de aluno aqui. Melhor ainda se tiver um resultado concreto, como seguidores, vendas ou clientes novos.</p>
+        <figcaption class="who"><span class="avatar" aria-hidden="true"></span><span><b>Nome do aluno</b>@perfil · profissão</span></figcaption>
+      </figure>
+      <figure class="testi" style="margin:0">
+        <span class="q" aria-hidden="true">“</span>
+        <p>Depoimento real de aluno aqui. Melhor ainda se tiver um resultado concreto, como seguidores, vendas ou clientes novos.</p>
+        <figcaption class="who"><span class="avatar" aria-hidden="true"></span><span><b>Nome do aluno</b>@perfil · profissão</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== FECHAMENTO ===== -->
+  <section class="final" id="entrar" aria-labelledby="t-final">
+    <h2 id="t-final">Seu próximo cliente pode chegar <em>pelo próximo vídeo</em></h2>
+    <p>Você já tem o celular e conhece o seu negócio melhor que ninguém. O que falta é o método.</p>
+    <a class="cta" href="https://wa.me/554796296233?text=Oi%20Gustavo!%20Vim%20pela%20p%C3%A1gina%20do%20curso%20e%20quero%20entrar.">
+      Quero entrar no curso
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <div class="guarantee">
+      <span class="seal" aria-hidden="true">7</span>
+      <div>
+        <h3>7 dias de garantia</h3>
+        <p>Assista às aulas por até 7 dias. Se não gostar, é só pedir e devolvemos 100% do valor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERGUNTAS ===== -->
+  <section aria-labelledby="t-faq">
+    <div class="head">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 id="t-faq">Ficou alguma <em>dúvida</em>?</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Pra quem é o curso?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Empresários, profissionais liberais e criadores que querem usar o Instagram pra atrair clientes. Serve pra quem está começando e pra quem já posta mas não vende.</p>
+      </details>
+      <details>
+        <summary>Preciso ter muitos seguidores?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Não. O método funciona pra perfis pequenos. O que importa é atrair as pessoas certas, e isso não depende do tamanho do seu perfil hoje.</p>
+      </details>
+      <details>
+        <summary>Preciso de equipamento?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Não. Todas as aulas de gravação e edição são feitas com o celular.</p>
+      </details>
+      <details>
+        <!-- EXEMPLO: confirme o tempo de acesso -->
+        <summary>Por quanto tempo tenho acesso?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Você tem 1 ano de acesso a todas as aulas, incluindo as atualizações que saírem nesse período.</p>
+      </details>
+      <details>
+        <summary>E se eu não gostar?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Você tem 7 dias de garantia. Se não gostar, é só pedir e devolvemos 100% do valor.</p>
+      </details>
+      <details>
+        <summary>Prefiro que façam por mim. Dá?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <p>Dá. Minha equipe cuida da estratégia, roteiro, gravação, edição e postagem. <a href="../#feito-pra-voce">Veja como funciona o serviço</a>.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>© 2026 Gustavo Leal · Balneário Camboriú, SC</span>
+    <span>Dúvidas: <a href="https://wa.me/554796296233">WhatsApp (47) 9629-6233</a></span>
+  </footer>
+</main>
+
+<div class="stickybar" id="stickybar">
+  <a class="cta" href="https://wa.me/554796296233?text=Oi%20Gustavo!%20Vim%20pela%20p%C3%A1gina%20do%20curso%20e%20quero%20entrar.">
+    Quero entrar no curso
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+  </a>
+</div>
+
+<script>
+  (function () {
+    var bar = document.getElementById("stickybar");
+    var hero = document.getElementById("hero-cta");
+    var final = document.getElementById("entrar");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+    document.body.classList.add("has-bar");
+    var heroVisible = true, finalVisible = false;
+    function update() { bar.classList.toggle("on", !heroVisible && !finalVisible); }
+    new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function (es) { finalVisible = es[0].isIntersecting; update(); }).observe(final);
+  })();
+</script>
+</body>
+</html>
